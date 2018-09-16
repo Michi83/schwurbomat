@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
     <head>
-        <meta charset="utf-8" />
-        <script src="schwurbomat.js"></script>
+        <meta charset="utf-8">
         <title>Schwurbomat</title>
     </head>
-    <body onload="analyzeEverything()">
-        <label for="length">Schwingungsebene:</label>
-        <input id="length" min="0" onchange="analyzeEverything()" type="number" value="10" />
-        <input onclick="generateVerse()" type="button" value="Schwurbeln" />
-        <p id="verse"></p>
+    <body>
+        <button type="button" id="woo-button">Schwurbeln</button>
+        <div id="woo"></div>
+        <script src="schwurbomat.js"></script>
     </body>
 </html>
