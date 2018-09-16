@@ -2,9 +2,8 @@ var adjectives = []
 var modifiers = []
 var nouns = []
 
-var Adjective = function (nominative, genitive) {
-    this.nominative = nominative
-    this.genitive = genitive
+var Adjective = function (adjective) {
+    this.adjective = adjective
     adjectives.push(this)
 }
 
@@ -46,15 +45,15 @@ var generateWoo = function () {
     var noun3 = pickOne(nouns)
     var woo = ""
     woo += capitalize(articles.nominative[noun1.gender]) + " "
-    woo += adjective1.nominative + " "
+    woo += adjective1.adjective + "e "
     woo += modifier1.modifier
     woo += noun1.nominative + " ist "
     woo += articles.nominative[noun2.gender] + " "
-    woo += adjective2.nominative + " "
+    woo += adjective2.adjective + "e "
     woo += modifier2.modifier
     woo += noun2.nominative + " "
     woo += articles.genitive[noun3.gender] + " "
-    woo += adjective3.genitive + " "
+    woo += adjective3.adjective + "en "
     woo += modifier3.modifier
     woo += noun3.genitive + "."
     return woo
@@ -69,27 +68,27 @@ wooButton.addEventListener(
     }
 )
 
-new Adjective("alternative", "alternativen")
-new Adjective("anthroposophische", "anthroposophischen")
-new Adjective("astrale", "astralen")
-new Adjective("ätherische", "ätherischen")
-new Adjective("ayurvedische", "ayurvedischen")
-new Adjective("disharmonische", "disharmonischen")
-new Adjective("energetische", "energetischen")
-new Adjective("esoterische", "esoterischen")
-new Adjective("feinstoffliche", "feinstofflichen")
-new Adjective("ganzheitliche", "ganzheitlichen")
-new Adjective("harmonische", "harmonischen")
-new Adjective("harmonisierende", "harmonisierenden")
-new Adjective("kosmische", "kosmischen")
-new Adjective("mentale", "mentalen")
-new Adjective("nachhaltige", "nachhaltigen")
-new Adjective("negative", "negativen")
-new Adjective("positive", "positiven")
-new Adjective("sechsdimensionale", "sechsdimensionalen")
-new Adjective("therapeutische", "therapeutischen")
-new Adjective("tonisierende", "tonisierenden")
-new Adjective("universelle", "universellen")
+new Adjective("alternativ")
+new Adjective("anthroposophisch")
+new Adjective("astral")
+new Adjective("ätherisch")
+new Adjective("ayurvedisch")
+new Adjective("disharmonisch")
+new Adjective("energetisch")
+new Adjective("esoterisch")
+new Adjective("feinstofflich")
+new Adjective("ganzheitlich")
+new Adjective("harmonisch")
+new Adjective("harmonisierend")
+new Adjective("kosmisch")
+new Adjective("mental")
+new Adjective("nachhaltig")
+new Adjective("negativ")
+new Adjective("positiv")
+new Adjective("sechsdimensional")
+new Adjective("therapeutisch")
+new Adjective("tonisierend")
+new Adjective("universell")
 
 new Modifier("Astro")
 new Modifier("Bio")
