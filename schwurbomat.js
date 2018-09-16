@@ -53,10 +53,10 @@ var generateWoo = function () {
     woo += adjective2.nominative + " "
     woo += modifier2.modifier
     woo += noun2.nominative + " "
-    woo += articles.genitive[noun2.gender] + " "
-    woo += adjective2.genitive + " "
-    woo += modifier2.modifier
-    woo += noun2.genitive + "."
+    woo += articles.genitive[noun3.gender] + " "
+    woo += adjective3.genitive + " "
+    woo += modifier3.modifier
+    woo += noun3.genitive + "."
     return woo
 }
 
