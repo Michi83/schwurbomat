@@ -24,9 +24,13 @@ var articles = {
     genitive: {m: "des", f: "der", n: "des"},
 }
 
-var pickOne = function (array) {
-    var index = Math.floor(Math.random() * array.length)
-    return array[index]
+var shuffle = function (array) {
+    for (var i = array.length; i > 1; i--) {
+        var j = Math.floor(Math.random() * i)
+        var temp = array[i - 1]
+        array[i - 1] = array[j]
+        array[j] = temp
+    }
 }
 
 var capitalize = function (string) {
@@ -34,28 +38,23 @@ var capitalize = function (string) {
 }
 
 var generateWoo = function () {
-    var adjective1 = pickOne(adjectives)
-    var adjective2 = pickOne(adjectives)
-    var adjective3 = pickOne(adjectives)
-    var modifier1 = pickOne(modifiers)
-    var modifier2 = pickOne(modifiers)
-    var modifier3 = pickOne(modifiers)
-    var noun1 = pickOne(nouns)
-    var noun2 = pickOne(nouns)
-    var noun3 = pickOne(nouns)
     var woo = ""
-    woo += capitalize(articles.nominative[noun1.gender]) + " "
-    woo += adjective1.adjective + "e "
-    woo += modifier1.modifier
-    woo += noun1.nominative + " ist "
-    woo += articles.nominative[noun2.gender] + " "
-    woo += adjective2.adjective + "e "
-    woo += modifier2.modifier
-    woo += noun2.nominative + " "
-    woo += articles.genitive[noun3.gender] + " "
-    woo += adjective3.adjective + "en "
-    woo += modifier3.modifier
-    woo += noun3.genitive + "."
+    shuffle(adjectives)
+    shuffle(modifiers)
+    shuffle(nouns)
+    woo += articles.nominative[nouns[0].gender] + " "
+    woo += adjectives[0].adjective + "e "
+    woo += modifiers[0].modifier
+    woo += nouns[0].nominative + " ist "
+    woo += articles.nominative[nouns[1].gender] + " "
+    woo += adjectives[1].adjective + "e "
+    woo += modifiers[1].modifier
+    woo += nouns[1].nominative + " "
+    woo += articles.genitive[nouns[2].gender] + " "
+    woo += adjectives[2].adjective + "en "
+    woo += modifiers[2].modifier
+    woo += nouns[2].genitive + "."
+    woo = capitalize(woo)
     return woo
 }
 
@@ -104,6 +103,7 @@ new Adjective("schöpferisch")
 new Adjective("schwebend")
 new Adjective("sechsdimensional")
 new Adjective("telepathisch")
+new Adjective("theosophisch")
 new Adjective("therapeutisch")
 new Adjective("tonisierend")
 new Adjective("transzendent")
