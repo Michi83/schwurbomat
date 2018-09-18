@@ -2,3 +2,120 @@
 {
     display: none;
 }
+
+#woo, #woo-button, .twitter-share-button
+{
+    position: absolute;
+}
+
+@media (max-width: 767px)
+{
+    #schwurbomat
+    {
+        background-image: url(schwurbomat540.jpg);
+        height: 450px;
+    }
+
+    #woo
+    {
+        left: 50px;
+        top: 350px;
+        width: 325px;
+    }
+
+    #woo-button
+    {
+        left: 300px;
+        top: 100px;
+    }
+
+    .twitter-share-button
+    {
+        left: 375px;
+        top: 375px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px)
+{
+    #schwurbomat
+    {
+        background-image: url(schwurbomat720.jpg);
+        height: 600px;
+    }
+
+    #woo
+    {
+        left: 75px;
+        top: 500px;
+        width: 425px;
+    }
+
+    #woo-button
+    {
+        left: 425px;
+        top: 150px;
+    }
+
+    .twitter-share-button
+    {
+        left: 525px;
+        top: 500px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px)
+{
+    #schwurbomat
+    {
+        background-image: url(schwurbomat960.jpg);
+        height: 800px;
+    }
+
+    #woo
+    {
+        left: 100px;
+        top: 650px;
+        width: 750px;
+    }
+
+    #woo-button
+    {
+        left: 600px;
+        top: 175px;
+    }
+
+    .twitter-share-button
+    {
+        left: 750px;
+        top: 700px;
+    }
+}
+
+@media (min-width: 1200px)
+{
+    #schwurbomat
+    {
+        background-image: url(schwurbomat.jpg);
+        height: 950px;
+    }
+
+    #woo
+    {
+        left: 125px;
+        top: 775px;
+        width: 875px;
+    }
+
+    #woo-button
+    {
+        left: 725px;
+        top: 225px;
+    }
+
+    .twitter-share-button
+    {
+        left: 900px;
+        top: 825px;
+    }
+}

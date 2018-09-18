@@ -11,28 +11,17 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center mt-5">
-                    <h1>Schwurbomat<sup>TM</sup></h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div id="woo" class="alert alert-primary"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col text-right">
-                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" id="twitter-button">
-                        <button type="button" class="btn btn-primary">
-                            <span class="fab fa-twitter"></span> Twittern
-                        </button>
-                    </a>
-                    <button type="button" id="woo-button" class="btn btn-danger">
-                        Schwurbeln
+        <div class="container" style="position: relative;">
+            <div class="row" id="schwurbomat">
+                <div id="woo"></div>
+                <button type="button" id="woo-button" class="btn btn-danger">
+                    Schwurbeln
+                </button>
+                <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" id="twitter-button">
+                    <button type="button" class="btn btn-primary">
+                        <span class="fab fa-twitter"></span> Twittern
                     </button>
-                </div>
+                </a>
             </div>
         </div>
         <script src="schwurbomat.js"></script>
