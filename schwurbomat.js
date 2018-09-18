@@ -62,16 +62,22 @@ var wooButton = document.getElementById("woo-button")
 wooButton.addEventListener(
     "click",
     function () {
-        var woo = generateWoo()
         var wooDiv = document.getElementById("woo")
-        wooDiv.innerHTML = woo
-        var twitterButton = document.getElementById("twitter-button")
-        var twitterHref = "https://twitter.com/intent/tweet"
-        twitterHref += "?text=" + encodeURIComponent(woo)
-        twitterHref += "&url=" + encodeURIComponent("https://michi83.github.io/schwurbomat/")
-        twitterHref += "&hashtags=" + encodeURIComponent("Schwurbomat,Esoterik,Globukalypse")
-        twitterButton.href = twitterHref
-        twitterButton.style.display = "inline"
+        $(wooDiv).fadeOut(
+            400,
+            function () {
+                var woo = generateWoo()
+                wooDiv.innerHTML = woo
+                var twitterButton = document.getElementById("twitter-button")
+                var twitterHref = "https://twitter.com/intent/tweet"
+                twitterHref += "?text=" + encodeURIComponent(woo)
+                twitterHref += "&url=" + encodeURIComponent("https://michi83.github.io/schwurbomat/")
+                twitterHref += "&hashtags=" + encodeURIComponent("Schwurbomat,Esoterik,Globukalypse")
+                twitterButton.href = twitterHref
+                twitterButton.style.display = "inline"
+                $(wooDiv).fadeIn()
+            }
+        );
     }
 )
 
