@@ -72,7 +72,7 @@ wooButton.addEventListener(
                 var twitterHref = "https://twitter.com/intent/tweet"
                 twitterHref += "?text=" + encodeURIComponent(woo)
                 twitterHref += "&url=" + encodeURIComponent("https://michi83.github.io/schwurbomat/")
-                twitterHref += "&hashtags=" + encodeURIComponent("Schwurbomat,Esoterik,Globukalypse")
+                twitterHref += "&hashtags=" + encodeURIComponent("Schwurbomat,Esoterik")
                 twitterButton.href = twitterHref
                 twitterButton.style.display = "inline"
                 $(wooDiv).fadeIn()
