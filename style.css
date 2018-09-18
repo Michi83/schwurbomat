@@ -8,6 +8,11 @@
     position: absolute;
 }
 
+#woo
+{
+    font-family: Oswald;
+}
+
 @media (max-width: 767px)
 {
     #schwurbomat
@@ -18,8 +23,9 @@
 
     #woo
     {
+        font-size: 14px;
         left: 50px;
-        top: 350px;
+        top: 360px;
         width: 325px;
     }
 
@@ -74,6 +80,7 @@
 
     #woo
     {
+        font-size: 24px;
         left: 100px;
         top: 650px;
         width: 750px;
@@ -102,6 +109,7 @@
 
     #woo
     {
+        font-size: 24px;
         left: 125px;
         top: 775px;
         width: 875px;
