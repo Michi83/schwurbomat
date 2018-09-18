@@ -62,8 +62,16 @@ var wooButton = document.getElementById("woo-button")
 wooButton.addEventListener(
     "click",
     function () {
+        var woo = generateWoo()
         var wooDiv = document.getElementById("woo")
-        wooDiv.innerHTML = generateWoo()
+        wooDiv.innerHTML = woo
+        var twitterButton = document.getElementById("twitter-button")
+        var twitterHref = "https://twitter.com/intent/tweet"
+        twitterHref += "?text=" + encodeURIComponent(woo)
+        twitterHref += "&url=" + encodeURIComponent("https://michi83.github.io/schwurbomat/")
+        twitterHref += "&hashtags=" + encodeURIComponent("Schwurbomat,Esoterik,Globukalypse")
+        twitterButton.href = twitterHref
+        twitterButton.style.display = "inline"
     }
 )
 
@@ -182,7 +190,7 @@ new Noun("radionik", "radionik", "f")
 new Noun("resonanz", "resonanz", "f")
 new Noun("schwingung", "schwingung", "f")
 new Noun("sigille", "sigille", "f")
-new Noun("tarot", "tarot", "n")
+new Noun("tarot", "tarots", "n")
 new Noun("tensor", "tensors", "m")
 new Noun("verschränkung", "verschränkung", "f")
 new Noun("welle", "welle", "f")
