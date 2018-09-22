@@ -3,7 +3,7 @@
     display: none;
 }
 
-#woo, #woo-button, .twitter-share-button
+#woo, #woo-button, .twitter-share-button, #follow1, #follow2
 {
     position: absolute;
 }
@@ -26,6 +26,24 @@
 {
     right: 12%;
     bottom: 22%;
+}
+
+#follow1
+{
+    height: 4%;
+    right: 5.5%;
+    top: 11%;
+    transform: rotate(-15deg);
+    width: 13.5%;
+}
+
+#follow2
+{
+    height: 5%;
+    right: 5%;
+    top: 15%;
+    transform: rotate(-15deg);
+    width: 13.5%;
 }
 
 @media (max-width: 767px)
