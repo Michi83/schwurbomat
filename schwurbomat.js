@@ -1,6 +1,7 @@
 var adjectives = []
 var modifiers = []
 var nouns = []
+var verbs = []
 
 var Adjective = function (adjective) {
     this.adjective = adjective
@@ -15,13 +16,30 @@ var Modifier = function (modifier) {
 var Noun = function (nominative, genitive, gender) {
     this.nominative = nominative
     this.genitive = genitive
+    this.dative = nominative
+    this.accusative = nominative
     this.gender = gender
     nouns.push(this)
+}
+
+var Verb = function (verb, case_) {
+    this.verb = verb
+    this.case_ = case_
+    verbs.push(this)
 }
 
 var articles = {
     nominative: {m: "der", f: "die", n: "das"},
     genitive: {m: "des", f: "der", n: "des"},
+    dative : {m: "dem", f: "der", n: "dem"},
+    accusative : {m: "den", f: "die", n: "das"},
+}
+
+var adjectiveEndings = {
+    nominative: {m: "e", f: "e", n: "e"},
+    genitive: {m: "en", f: "en", n: "en"},
+    dative : {m: "en", f: "en", n: "en"},
+    accusative : {m: "en", f: "e", n: "e"},
 }
 
 var shuffle = function (array) {
@@ -42,16 +60,21 @@ var generateWoo = function () {
     shuffle(adjectives)
     shuffle(modifiers)
     shuffle(nouns)
+    shuffle(verbs)
     woo += articles.nominative[nouns[0].gender] + " "
-    woo += adjectives[0].adjective + "e "
+    woo += adjectives[0].adjective
+    woo += adjectiveEndings.nominative[nouns[0].gender] + " "
     woo += modifiers[0].modifier
-    woo += nouns[0].nominative + " ist "
-    woo += articles.nominative[nouns[1].gender] + " "
-    woo += adjectives[1].adjective + "e "
+    woo += nouns[0].nominative + " "
+    woo += verbs[0].verb + " "
+    woo += articles[verbs[0].case_][nouns[1].gender] + " "
+    woo += adjectives[1].adjective
+    woo += adjectiveEndings[verbs[0].case_][nouns[1].gender] + " "
     woo += modifiers[1].modifier
-    woo += nouns[1].nominative + " "
+    woo += nouns[1][verbs[0].case_] + " "
     woo += articles.genitive[nouns[2].gender] + " "
-    woo += adjectives[2].adjective + "en "
+    woo += adjectives[2].adjective
+    woo += adjectiveEndings.genitive[nouns[2].gender] + " "
     woo += modifiers[2].modifier
     woo += nouns[2].genitive + "."
     woo = capitalize(woo)
@@ -138,6 +161,7 @@ new Modifier("Bewusstseins")
 new Modifier("Bio")
 new Modifier("Chakra")
 new Modifier("Christus")
+new Modifier("Delfin")
 new Modifier("Dimensions")
 new Modifier("Einhorn")
 new Modifier("Elementar")
@@ -193,6 +217,7 @@ new Noun("flow", "flows", "m")
 new Noun("frequenz", "frequenz", "f")
 new Noun("heilung", "heilung", "f")
 new Noun("homöopathie", "homöopathie", "f")
+new Noun("horoskop", "horoskops", "n")
 new Noun("inkarnation", "inkarnation", "f")
 new Noun("karma", "karmas", "n")
 new Noun("kristall", "kristalls", "m")
@@ -207,3 +232,17 @@ new Noun("tarot", "tarots", "n")
 new Noun("tensor", "tensors", "m")
 new Noun("verschränkung", "verschränkung", "f")
 new Noun("welle", "welle", "f")
+
+new Verb("beherrscht", "accusative")
+new Verb("beschwört", "accusative")
+new Verb("channelt", "accusative")
+new Verb("energetisiert", "accusative")
+new Verb("fließt durch", "accusative")
+new Verb("gehorcht", "dative")
+new Verb("harmonisiert mit", "dative")
+new Verb("heilt", "accusative")
+new Verb("neutralisiert", "accusative")
+new Verb("ist", "nominative")
+new Verb("potenziert", "accusative")
+new Verb("resoniert mit", "dative")
+new Verb("unterstützt", "accusative")
