@@ -197,6 +197,7 @@ new Modifier("Tachyonen")
 new Modifier("Tesla")
 new Modifier("Traum")
 new Modifier("Venus")
+new Modifier("Vollmond")
 new Modifier("Yoga")
 
 new Noun("akkumulator", "akkumulators", "m")
