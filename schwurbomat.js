@@ -57,8 +57,7 @@ var capitalize = function (string) {
 
 var generateWoo = function () {
     if (window.location.hostname !== "michi83.github.io") {
-        alert("Dies ist eine Kopie des Schwurbomat. Das Original findest du auf https://michi83.github.io/schwurbomat/.")
-        return null
+        return "Dies ist eine Kopie des Schwurbomat. Das Original findest du auf https://michi83.github.io/schwurbomat/."
     }
     var woo = ""
     shuffle(adjectives)
