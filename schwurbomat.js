@@ -56,6 +56,10 @@ var capitalize = function (string) {
 }
 
 var generateWoo = function () {
+    if (window.location.hostname !== "michi83.github.io") {
+        alert("Dies ist eine Kopie des Schwurbomat. Das Original findest du auf https://michi83.github.io/schwurbomat/.")
+        return null
+    }
     var woo = ""
     shuffle(adjectives)
     shuffle(modifiers)
@@ -261,3 +265,4 @@ new Verb("resoniert mit", "dative")
 new Verb("unterstützt", "accusative")
 new Verb("verbindet", "accusative")
 new Verb("verstärkt", "accusative")
+
